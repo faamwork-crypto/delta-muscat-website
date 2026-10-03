@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <rect width="1200" height="900" fill="#EFE9DE"/>
+  
+      <rect x="144" y="162" width="300" height="144" fill="#232220" stroke="#1C1B18" stroke-width="3"/>
+      <rect x="144" y="162" width="300" height="16.2" fill="#9B9A92" opacity="0.7"/>
+      <rect x="144" y="234" width="300" height="23.4" fill="#6F6E68" opacity="0.35"/>
+      <rect x="516" y="162" width="300" height="144" fill="#232220" stroke="#1C1B18" stroke-width="3"/>
+      <rect x="516" y="162" width="300" height="16.2" fill="#9B9A92" opacity="0.7"/>
+      <rect x="516" y="234" width="300" height="23.4" fill="#6F6E68" opacity="0.35"/>
+      <rect x="144" y="378" width="200" height="108" fill="#232220" stroke="#1C1B18" stroke-width="3"/>
+      <rect x="144" y="378" width="200" height="16.2" fill="#9B9A92" opacity="0.7"/>
+      <rect x="144" y="432" width="200" height="23.4" fill="#6F6E68" opacity="0.35"/>
+      <rect x="392" y="378" width="200" height="108" fill="#232220" stroke="#1C1B18" stroke-width="3"/>
+      <rect x="392" y="378" width="200" height="16.2" fill="#9B9A92" opacity="0.7"/>
+      <rect x="392" y="432" width="200" height="23.4" fill="#6F6E68" opacity="0.35"/>
+      <rect x="640" y="378" width="200" height="108" fill="#232220" stroke="#1C1B18" stroke-width="3"/>
+      <rect x="640" y="378" width="200" height="16.2" fill="#9B9A92" opacity="0.7"/>
+      <rect x="640" y="432" width="200" height="23.4" fill="#6F6E68" opacity="0.35"/>
+      <rect x="144" y="558" width="300" height="126.00000000000001" fill="#232220" stroke="#1C1B18" stroke-width="3"/>
+      <rect x="144" y="558" width="300" height="16.2" fill="#9B9A92" opacity="0.7"/>
+      <rect x="144" y="621" width="300" height="23.4" fill="#6F6E68" opacity="0.35"/>
+      <rect x="516" y="558" width="300" height="126.00000000000001" fill="#232220" stroke="#1C1B18" stroke-width="3"/>
+      <rect x="516" y="558" width="300" height="16.2" fill="#9B9A92" opacity="0.7"/>
+      <rect x="516" y="621" width="300" height="23.4" fill="#6F6E68" opacity="0.35"/>
+  <line x1="72" y1="792" x2="1128" y2="792" stroke="#A87C4F" stroke-width="3" opacity="0.85"/>
+<rect width="1200" height="900" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>

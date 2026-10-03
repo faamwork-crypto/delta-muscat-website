@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171613" stop-opacity="1"/><stop offset="0.8" stop-color="#26221A" stop-opacity="1"/><stop offset="1" stop-color="#2E2818" stop-opacity="1"/></linearGradient>
+  <radialGradient id="sg"><stop offset="0" stop-color="#C9A876" stop-opacity="0.9"/><stop offset="1" stop-color="#C9A876" stop-opacity="0"/></radialGradient>
+  <rect width="1400" height="1000" fill="url(#sk)"/>
+  <circle cx="1092" cy="260" r="70" fill="url(#sg)"/>
+  <rect y="680" width="1400" height="320" fill="#15140F"/>
+  <rect x="112" y="340" width="532" height="340" fill="#28261F"/>
+  <rect x="112" y="340" width="532" height="20" fill="#0F0E0C"/>
+  <rect x="168" y="420" width="126" height="120" fill="#C9A876" opacity="0.75"/>
+  <rect x="364" y="420" width="126" height="120" fill="#A87C4F" opacity="0.6"/>
+  <rect x="644" y="300" width="560" height="40" fill="#121110"/>
+  <rect x="616" y="340" width="588" height="16" fill="#8F663F" opacity="0.9"/>
+  <rect x="644" y="356" width="588" height="340" fill="#211F19" opacity="0.55"/>
+  <rect x="658" y="580" width="28" height="100" fill="#0F0E0C" opacity="0.5"/><rect x="721" y="580" width="28" height="100" fill="#0F0E0C" opacity="0.5"/><rect x="783.9999999999999" y="580" width="28" height="100" fill="#0F0E0C" opacity="0.5"/><rect x="847" y="580" width="28" height="100" fill="#0F0E0C" opacity="0.5"/><rect x="909.9999999999999" y="580" width="28" height="100" fill="#0F0E0C" opacity="0.5"/><rect x="972.9999999999999" y="580" width="28" height="100" fill="#0F0E0C" opacity="0.5"/><rect x="1036" y="580" width="28" height="100" fill="#0F0E0C" opacity="0.5"/><rect x="1099" y="580" width="28" height="100" fill="#0F0E0C" opacity="0.5"/>
+  <line x1="644" y1="340" x2="644" y2="680" stroke="#121110" stroke-width="11.200000000000001" />
+  <line x1="1232" y1="340" x2="1232" y2="680" stroke="#121110" stroke-width="11.200000000000001" />
+<rect width="1400" height="1000" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>

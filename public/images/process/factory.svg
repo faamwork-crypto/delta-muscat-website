@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1000" viewBox="0 0 1920 1000" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <linearGradient id="f1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#211F1A" stop-opacity="1"/><stop offset="1" stop-color="#161512" stop-opacity="1"/></linearGradient>
+  <rect width="1920" height="1000" fill="url(#f1)"/>
+  <polygon points="0,0 960,160 1920,0" fill="#141311"/>
+  <polygon points="307.2,60 403.2,60 576,780 345.59999999999997,780" fill="#C9A876" opacity="0.1"/><polygon points="729.6,60 825.6,60 998.4000000000001,780 768,780" fill="#C9A876" opacity="0.1"/><polygon points="1152,60 1248,60 1420.8,780 1190.4,780" fill="#C9A876" opacity="0.1"/><polygon points="1574.4,60 1670.4,60 1843.2,780 1612.8000000000002,780" fill="#C9A876" opacity="0.1"/>
+  <rect x="76.8" y="300" width="1766.4" height="20" fill="#0F0E0C"/>
+  <rect x="576" y="160" width="96" height="660" fill="#0F0E0C" opacity="0.9"/>
+  <rect x="0" y="740" width="1920" height="260" fill="#1A1916"/>
+  <rect x="1152" y="520" width="422.4" height="220" fill="#26241E"/>
+  <rect x="1209.6" y="560" width="96" height="50" fill="#C9A876" opacity="0.8"/>
+  <rect x="230.39999999999998" y="600" width="307.2" height="140" fill="#26241E"/>
+  <rect x="288" y="630" width="76.8" height="40" fill="#A87C4F" opacity="0.7"/>
+<rect width="1920" height="1000" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>

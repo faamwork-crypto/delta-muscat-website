@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <linearGradient id="sail1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFAF6" stop-opacity="1"/><stop offset="1" stop-color="#EFE9DE" stop-opacity="1"/></linearGradient>
+  <linearGradient id="sail2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFE9DE" stop-opacity="1"/><stop offset="1" stop-color="#D9CDB6" stop-opacity="1"/></linearGradient>
+  <rect width="1600" height="1100" fill="#E5DCCB"/>
+  <rect y="814" width="1600" height="286" fill="#D9CDB6" opacity="0.75"/>
+  <path d="M 160 220 Q 672 484 1376 176 L 1280 484 Q 720 726 208 517 Z" fill="url(#sail1)"/>
+  <path d="M 320 605 Q 800 792 1440 550 L 1504 748 Q 880.0000000000001 968 288 792 Z" fill="url(#sail2)" opacity="0.96"/>
+  <line x1="160" y1="220" x2="96" y2="814" stroke="#1C1B18" stroke-width="9.6" />
+  <line x1="1376" y1="176" x2="1488" y2="770" stroke="#1C1B18" stroke-width="9.6" />
+  <line x1="320" y1="605" x2="224.00000000000003" y2="858" stroke="#1C1B18" stroke-width="8" />
+  <line x1="1440" y1="550" x2="1536" y2="792" stroke="#1C1B18" stroke-width="8" />
+  <ellipse cx="832" cy="880" rx="672" ry="55" fill="#1C1B18" opacity="0.06"/>
+<rect width="1600" height="1100" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>

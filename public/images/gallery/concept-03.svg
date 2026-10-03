@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171613" stop-opacity="1"/><stop offset="1" stop-color="#100F0D" stop-opacity="1"/></linearGradient>
+  <rect width="1400" height="1000" fill="#1B1A17"/>
+  <rect y="620" width="1400" height="380" fill="url(#gr)"/>
+  
+    <rect x="84" y="460" width="184.8" height="29.920000000000005" fill="#2E2B24" transform="skewX(-14)"/>
+    <rect x="98.784" y="460" width="170.01600000000002" height="24.310000000000006" fill="#8F663F" opacity="0.9" transform="skewX(-14)"/>
+    <rect x="113.568" y="482.44" width="19.6" height="360" fill="#0F0E0C"/>
+    <line x1="113.568" y1="471.22" x2="217.056" y2="467.48" stroke="#0F0E0C" stroke-width="7"/>
+    <rect x="336" y="425.00000000000006" width="222.60000000000002" height="36.040000000000006" fill="#2E2B24" transform="skewX(-14)"/>
+    <rect x="353.808" y="425.00000000000006" width="204.79200000000003" height="29.282500000000006" fill="#8F663F" opacity="0.9" transform="skewX(-14)"/>
+    <rect x="371.616" y="452.0300000000001" width="19.6" height="390" fill="#0F0E0C"/>
+    <line x1="371.616" y1="438.51500000000004" x2="496.27200000000005" y2="434.01000000000005" stroke="#0F0E0C" stroke-width="7"/>
+    <rect x="588" y="390" width="260.40000000000003" height="42.160000000000004" fill="#2E2B24" transform="skewX(-14)"/>
+    <rect x="608.832" y="390" width="239.56800000000004" height="34.255" fill="#8F663F" opacity="0.9" transform="skewX(-14)"/>
+    <rect x="629.664" y="421.62" width="19.6" height="420" fill="#0F0E0C"/>
+    <line x1="629.664" y1="405.81" x2="775.488" y2="400.54" stroke="#0F0E0C" stroke-width="7"/>
+    <rect x="840.0000000000001" y="355" width="298.20000000000005" height="48.28" fill="#2E2B24" transform="skewX(-14)"/>
+    <rect x="863.8560000000001" y="355" width="274.34400000000005" height="39.2275" fill="#8F663F" opacity="0.9" transform="skewX(-14)"/>
+    <rect x="887.7120000000001" y="391.21" width="19.6" height="449.99999999999994" fill="#0F0E0C"/>
+    <line x1="887.7120000000001" y1="373.105" x2="1054.7040000000002" y2="367.07" stroke="#0F0E0C" stroke-width="7"/>
+  <line x1="140" y1="900" x2="84" y2="990" stroke="#6F6E68" stroke-width="2" opacity="0.5"/><line x1="364" y1="900" x2="308" y2="990" stroke="#6F6E68" stroke-width="2" opacity="0.5"/><line x1="588" y1="900" x2="532" y2="990" stroke="#6F6E68" stroke-width="2" opacity="0.5"/><line x1="812" y1="900" x2="756" y2="990" stroke="#6F6E68" stroke-width="2" opacity="0.5"/><line x1="1036" y1="900" x2="980" y2="990" stroke="#6F6E68" stroke-width="2" opacity="0.5"/><line x1="1260" y1="900" x2="1204" y2="990" stroke="#6F6E68" stroke-width="2" opacity="0.5"/>
+<rect width="1400" height="1000" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <rect width="1200" height="900" fill="#F7F4EE"/>
+  <g transform="rotate(-14 192 306)"><rect x="72" y="108" width="228" height="378" rx="4" fill="#FBFAF6" stroke="#1C1B18" stroke-opacity="0.16" stroke-width="2"/></g><g transform="rotate(-7 372 306)"><rect x="252" y="108" width="228" height="378" rx="4" fill="#D9CDB6" stroke="#1C1B18" stroke-opacity="0.16" stroke-width="2"/></g><g transform="rotate(0 552 306)"><rect x="432" y="108" width="228" height="378" rx="4" fill="#A87C4F" stroke="#1C1B18" stroke-opacity="0.16" stroke-width="2"/></g><g transform="rotate(7 732 306)"><rect x="612" y="108" width="228" height="378" rx="4" fill="#4A4842" stroke="#1C1B18" stroke-opacity="0.16" stroke-width="2"/></g><g transform="rotate(14 912 306)"><rect x="791.9999999999999" y="108" width="228" height="378" rx="4" fill="#2B2A27" stroke="#1C1B18" stroke-opacity="0.16" stroke-width="2"/></g>
+  <rect x="72" y="540" width="1056" height="288" rx="6" fill="#B98F62"/>
+  <path d="M 96 594 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.35"/><path d="M 96 623.7 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.55"/><path d="M 96 653.4 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.75"/><path d="M 96 683.1 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.35"/><path d="M 96 712.8000000000001 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.55"/><path d="M 96 742.5000000000001 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.75"/><path d="M 96 772.2 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.35"/><path d="M 96 801.9 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.55"/><path d="M 96 831.6 q 180 12.6 360 0 t 360 0" stroke="#8A6A44" stroke-width="2.5" fill="none" opacity="0.75"/>
+  <rect x="72" y="540" width="1056" height="288" rx="6" fill="none" stroke="#1C1B18" stroke-opacity="0.2" stroke-width="2"/>
+<rect width="1200" height="900" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>

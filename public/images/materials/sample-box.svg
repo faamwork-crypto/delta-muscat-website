@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <rect width="1200" height="900" fill="#E5DCCB"/>
+  <rect x="120" y="108" width="960" height="90" fill="#B98F62" opacity="0.9"/>
+  <rect x="120" y="198" width="960" height="594" fill="#EFE9DE"/>
+  <rect x="168.00000000000003" y="252.00000000000003" width="192" height="198" fill="#FBFAF6" stroke="#1C1B18" stroke-opacity="0.14" stroke-width="2"/><rect x="396" y="252.00000000000003" width="192" height="198" fill="#D9CDB6" stroke="#1C1B18" stroke-opacity="0.14" stroke-width="2"/><rect x="624" y="252.00000000000003" width="192" height="198" fill="#A87C4F" stroke="#1C1B18" stroke-opacity="0.14" stroke-width="2"/><rect x="852.0000000000001" y="252.00000000000003" width="192" height="198" fill="#4A4842" stroke="#1C1B18" stroke-opacity="0.14" stroke-width="2"/><rect x="168.00000000000003" y="504.00000000000006" width="192" height="198" fill="#2B2A27" stroke="#1C1B18" stroke-opacity="0.14" stroke-width="2"/><rect x="396" y="504.00000000000006" width="192" height="198" fill="#EFE9DE" stroke="#1C1B18" stroke-opacity="0.14" stroke-width="2"/><rect x="624" y="504.00000000000006" width="192" height="198" fill="#C9A876" stroke="#1C1B18" stroke-opacity="0.14" stroke-width="2"/><rect x="852.0000000000001" y="504.00000000000006" width="192" height="198" fill="#6F6E68" stroke="#1C1B18" stroke-opacity="0.14" stroke-width="2"/>
+  <line x1="120" y1="792" x2="1080" y2="792" stroke="#1C1B18" stroke-width="3" opacity="0.3"/>
+<rect width="1200" height="900" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>

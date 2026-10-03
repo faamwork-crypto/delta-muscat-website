@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <linearGradient id="sk2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#191813" stop-opacity="1"/><stop offset="0.75" stop-color="#242019" stop-opacity="1"/><stop offset="1" stop-color="#2B2519" stop-opacity="1"/></linearGradient>
+  <radialGradient id="lamp"><stop offset="0" stop-color="#C9A876" stop-opacity="0.85"/><stop offset="1" stop-color="#C9A876" stop-opacity="0"/></radialGradient>
+  <rect width="1600" height="1000" fill="url(#sk2)"/>
+  <rect y="840" width="1600" height="160" fill="#12110D"/>
+  <rect x="0" y="0" width="1600" height="90" fill="#0E0D0B"/>
+  <rect x="-32" y="100" width="176" height="18" fill="#121110" opacity="0.9"/><rect x="192.00000000000003" y="100" width="176" height="18" fill="#121110" opacity="0.9"/><rect x="416" y="100" width="176" height="18" fill="#121110" opacity="0.9"/><rect x="640" y="100" width="176" height="18" fill="#121110" opacity="0.9"/><rect x="864" y="100" width="176" height="18" fill="#121110" opacity="0.9"/><rect x="1088" y="100" width="176" height="18" fill="#121110" opacity="0.9"/><rect x="1312" y="100" width="176" height="18" fill="#121110" opacity="0.9"/><rect x="1536.0000000000002" y="100" width="176" height="18" fill="#121110" opacity="0.9"/>
+  <circle cx="480" cy="300" r="176" fill="url(#lamp)" opacity="0.5"/><circle cx="832" cy="300" r="176" fill="url(#lamp)" opacity="0.5"/><circle cx="1184" cy="300" r="176" fill="url(#lamp)" opacity="0.5"/>
+  
+    <ellipse cx="288" cy="720" rx="88" ry="32" fill="#2B2822"/>
+    <line x1="288" y1="720" x2="288" y2="780" stroke="#0F0E0C" stroke-width="3" />
+    <ellipse cx="288" cy="780" rx="48" ry="16" fill="#0F0E0C" opacity="0.8"/>
+    <circle cx="368" cy="690" r="9.6" fill="#C9A876" opacity="0.9"/>
+    <ellipse cx="720" cy="799.9999999999999" rx="88" ry="32" fill="#2B2822"/>
+    <line x1="720" y1="799.9999999999999" x2="720" y2="859.9999999999999" stroke="#0F0E0C" stroke-width="3" />
+    <ellipse cx="720" cy="859.9999999999999" rx="48" ry="16" fill="#0F0E0C" opacity="0.8"/>
+    <circle cx="800" cy="769.9999999999999" r="9.6" fill="#C9A876" opacity="0.9"/>
+    <ellipse cx="1152" cy="720" rx="88" ry="32" fill="#2B2822"/>
+    <line x1="1152" y1="720" x2="1152" y2="780" stroke="#0F0E0C" stroke-width="3" />
+    <ellipse cx="1152" cy="780" rx="48" ry="16" fill="#0F0E0C" opacity="0.8"/>
+    <circle cx="1232" cy="690" r="9.6" fill="#C9A876" opacity="0.9"/>
+<rect width="1600" height="1000" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>

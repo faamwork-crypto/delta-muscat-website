@@ -1,0 +1,15 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+out/
+
+# local toolchain (portable Node.js used for development)
+.tools/
+
+# misc
+*.tmp
+*.log
+.DS_Store
+downloads/ 

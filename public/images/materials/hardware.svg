@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter></defs>
+
+  <rect width="1200" height="900" fill="#EFE9DE"/>
+  
+    <circle cx="288" cy="288" r="41.6" fill="none" stroke="#1C1B18" stroke-width="8"/>
+    <circle cx="288" cy="288" r="19.200000000000003" fill="none" stroke="#1C1B18" stroke-width="6.4"/>
+    <line x1="316.8" y1="288" x2="329.6" y2="288" stroke="#1C1B18" stroke-width="6.4" /><line x1="302.4" y1="312.9415316289918" x2="308.8" y2="324.0266567974326" stroke="#1C1B18" stroke-width="6.4" /><line x1="273.6" y1="312.9415316289918" x2="267.2" y2="324.0266567974327" stroke="#1C1B18" stroke-width="6.4" /><line x1="259.2" y1="288" x2="246.4" y2="288" stroke="#1C1B18" stroke-width="6.4" /><line x1="273.59999999999997" y1="263.0584683710082" x2="267.2" y2="251.97334320256735" stroke="#1C1B18" stroke-width="6.4" /><line x1="302.4" y1="263.0584683710082" x2="308.8" y2="251.97334320256735" stroke="#1C1B18" stroke-width="6.4" />
+  
+    <circle cx="864" cy="270" r="41.6" fill="none" stroke="#1C1B18" stroke-width="8"/>
+    <circle cx="864" cy="270" r="19.200000000000003" fill="none" stroke="#1C1B18" stroke-width="6.4"/>
+    <line x1="892.8" y1="270" x2="905.6" y2="270" stroke="#1C1B18" stroke-width="6.4" /><line x1="878.4" y1="294.9415316289918" x2="884.8" y2="306.0266567974326" stroke="#1C1B18" stroke-width="6.4" /><line x1="849.6" y1="294.9415316289918" x2="843.2" y2="306.0266567974327" stroke="#1C1B18" stroke-width="6.4" /><line x1="835.2" y1="270" x2="822.4" y2="270" stroke="#1C1B18" stroke-width="6.4" /><line x1="849.6" y1="245.05846837100816" x2="843.1999999999999" y2="233.97334320256735" stroke="#1C1B18" stroke-width="6.4" /><line x1="878.4" y1="245.05846837100816" x2="884.8" y2="233.97334320256735" stroke="#1C1B18" stroke-width="6.4" />
+  <g stroke="#1C1B18" stroke-width="6" fill="none">
+    <path d="M 600 144 v 162 h 192 v 72"/>
+    <rect x="504" y="540" width="192" height="180"/>
+    <path d="M 504 540 l -60 54 M 696 540 l 60 54"/>
+  </g>
+  <rect x="144" y="396" width="240" height="126.00000000000001" rx="4" fill="none" stroke="#A87C4F" stroke-width="6"/>
+  <rect x="816.0000000000001" y="450" width="240" height="126.00000000000001" rx="4" fill="none" stroke="#A87C4F" stroke-width="6"/>
+<rect width="1200" height="900" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>
