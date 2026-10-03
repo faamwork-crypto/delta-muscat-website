@@ -5,10 +5,11 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
-import { solutionImages } from "@/lib/images";
+import { images, solutionImages } from "@/lib/images";
 import { buildMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { BASE } from "@/lib/site";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -41,7 +42,7 @@ export default async function SolutionsPage({
         eyebrow={dict.nav.solutions}
         title={dict.home.solutionsSection.title}
         lead={dict.home.solutionsSection.lead}
-        image="/images/solutions/pergolas.svg"
+        image={images.solutionsPergolas}
         imageAlt=""
       />
 
@@ -76,7 +77,7 @@ export default async function SolutionsPage({
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {dict.gallery.items.slice(0, 4).map((item, i) => (
               <Reveal key={item.id} delay={i * 80}>
-                <a href={`/${locale}/gallery`} className="group block">
+                <a href={`${BASE}/${locale}/gallery`} className="group block">
                   <figure className="media-card-img relative aspect-[4/3] bg-sand">
                     <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                     <span className="chip chip-concept absolute end-3 top-3">{item.concept}</span>

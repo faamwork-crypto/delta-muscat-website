@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/config";
 import { site, solutionSlugs } from "@/lib/site";
 
+// Required for `output: export` (GitHub Pages build).
+export const dynamic = "force-static";
+
 const baseRoutes = [
   "",
   "/about",

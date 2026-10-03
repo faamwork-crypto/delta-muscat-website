@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import { images, materialImages } from "@/lib/images";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { Locale } from "@/i18n/config";
+import { BASE } from "@/lib/site";
 
 export default function MaterialsSection({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const m = dict.home.materialsSection;
@@ -13,7 +14,7 @@ export default function MaterialsSection({ locale, dict }: { locale: Locale; dic
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading eyebrow={m.eyebrow} title={m.title} lead={m.lead} className="max-w-2xl" />
           <Reveal delay={100}>
-            <a href={`/${locale}/materials`} className="link-arrow text-bronze-ink">
+            <a href={`${BASE}/${locale}/materials`} className="link-arrow text-bronze-ink">
               {m.cta}
               <ArrowIcon />
             </a>
@@ -23,7 +24,7 @@ export default function MaterialsSection({ locale, dict }: { locale: Locale; dic
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {dict.materials.categories.map((category, i) => (
             <Reveal key={category.name} delay={(i % 3) * 90}>
-              <a href={`/${locale}/materials`} className="group block h-full">
+              <a href={`${BASE}/${locale}/materials`} className="group block h-full">
                 <div className="media-card-img aspect-[4/3] bg-sand">
                   <img
                     src={materialImages[i]}
@@ -40,7 +41,7 @@ export default function MaterialsSection({ locale, dict }: { locale: Locale; dic
 
           {/* Sample-box feature tile */}
           <Reveal delay={180}>
-            <a href={`/${locale}/materials`} className="group block h-full">
+            <a href={`${BASE}/${locale}/materials`} className="group block h-full">
               <div className="media-card-img aspect-[4/3] bg-sand">
                 <img
                   src={images.sampleBox}

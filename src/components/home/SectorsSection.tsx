@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import { sectorImages } from "@/lib/images";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { Locale } from "@/i18n/config";
+import { BASE } from "@/lib/site";
 
 export default function SectorsSection({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const s = dict.home.sectorsSection;
@@ -19,7 +20,7 @@ export default function SectorsSection({ locale, dict }: { locale: Locale; dict:
             className="max-w-2xl"
           />
           <Reveal delay={100}>
-            <a href={`/${locale}/sectors`} className="link-arrow text-bronze-soft">
+            <a href={`${BASE}/${locale}/sectors`} className="link-arrow text-bronze-soft">
               {s.cta}
               <ArrowIcon />
             </a>
@@ -30,7 +31,7 @@ export default function SectorsSection({ locale, dict }: { locale: Locale; dict:
           {dict.sectors.items.map((sector, i) => (
             <Reveal key={sector.id} delay={(i % 5) * 80}>
               <a
-                href={`/${locale}/sectors#${sector.id}`}
+                href={`${BASE}/${locale}/sectors#${sector.id}`}
                 className="group block"
                 aria-label={sector.name}
               >

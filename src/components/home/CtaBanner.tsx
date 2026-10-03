@@ -1,7 +1,7 @@
 import { btnClass, ArrowIcon } from "@/components/Button";
 import Reveal from "@/components/Reveal";
 import { images } from "@/lib/images";
-import { site } from "@/lib/site";
+import { site, BASE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { Locale } from "@/i18n/config";
 
@@ -29,7 +29,7 @@ export default function CtaBanner({ locale, dict }: { locale: Locale; dict: Dict
           <h2 className="display-1 mx-auto max-w-3xl text-paper">{cta.title}</h2>
           <p className="lead mx-auto mt-6 max-w-2xl text-steel-light">{cta.text}</p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href={`/${locale}/contact`} className={btnClass("primaryDark")}>
+            <a href={`${BASE}/${locale}/contact`} className={btnClass("primaryDark")}>
               {cta.primary}
             </a>
             <a href={site.headOfficePhoneHref} className={btnClass("outlineLight")}>

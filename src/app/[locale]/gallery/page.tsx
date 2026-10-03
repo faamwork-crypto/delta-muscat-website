@@ -6,6 +6,7 @@ import { isLocale, locales, type Locale } from "@/i18n/config";
 import { buildMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { images } from "@/lib/images";
 
 type Params = Promise<{ locale: string }>;
 
@@ -33,7 +34,7 @@ export default async function GalleryPage({ params }: { params: Params }) {
         eyebrow={g.eyebrow}
         title={g.title}
         lead={g.lead}
-        image="/images/gallery/concept-02.svg"
+        image={images.galleryConcept2}
         imageAlt=""
       />
 

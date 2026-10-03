@@ -3,6 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { Locale } from "@/i18n/config";
+import { BASE } from "@/lib/site";
 
 export default function FeaturedProjects({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const f = dict.home.featured;
@@ -22,7 +23,7 @@ export default function FeaturedProjects({ locale, dict }: { locale: Locale; dic
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading eyebrow={f.eyebrow} title={f.title} lead={f.lead} className="max-w-2xl" />
           <Reveal delay={100}>
-            <a href={`/${locale}/gallery`} className="link-arrow text-bronze-ink">
+            <a href={`${BASE}/${locale}/gallery`} className="link-arrow text-bronze-ink">
               {f.cta}
               <ArrowIcon />
             </a>
@@ -36,7 +37,7 @@ export default function FeaturedProjects({ locale, dict }: { locale: Locale; dic
               delay={i * 100}
               className={i === 0 ? "lg:col-span-2" : ""}
             >
-              <a href={`/${locale}/gallery`} className="group block">
+              <a href={`${BASE}/${locale}/gallery`} className="group block">
                 <figure
                   className={`media-card-img relative bg-graphite-soft ${
                     i === 0 ? "aspect-[21/9]" : "aspect-[4/3]"

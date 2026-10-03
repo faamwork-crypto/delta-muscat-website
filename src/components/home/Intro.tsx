@@ -3,6 +3,7 @@ import Reveal from "@/components/Reveal";
 import { images } from "@/lib/images";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { Locale } from "@/i18n/config";
+import { BASE } from "@/lib/site";
 
 export default function Intro({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.home.intro;
@@ -56,7 +57,7 @@ export default function Intro({ locale, dict }: { locale: Locale; dict: Dictiona
 
           <Reveal delay={120}>
             <a
-              href={`/${locale}/about`}
+              href={`${BASE}/${locale}/about`}
               className="link-arrow mt-8 text-bronze-ink"
             >
               {t.cta}

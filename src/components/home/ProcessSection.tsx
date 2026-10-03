@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import { images } from "@/lib/images";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { Locale } from "@/i18n/config";
+import { BASE } from "@/lib/site";
 
 export default function ProcessSection({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const p = dict.home.processSection;
@@ -13,7 +14,7 @@ export default function ProcessSection({ locale, dict }: { locale: Locale; dict:
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading eyebrow={p.eyebrow} title={p.title} lead={p.lead} className="max-w-2xl" />
           <Reveal delay={100}>
-            <a href={`/${locale}/process`} className="link-arrow text-bronze-ink">
+            <a href={`${BASE}/${locale}/process`} className="link-arrow text-bronze-ink">
               {p.cta}
               <ArrowIcon />
             </a>

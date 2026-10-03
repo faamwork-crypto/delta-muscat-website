@@ -10,6 +10,7 @@ import { solutionImages } from "@/lib/images";
 import { buildMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { BASE } from "@/lib/site";
 
 const slugs = ["pergolas", "parking-shades", "shade-structures", "metal-decoration"] as const;
 type Slug = (typeof slugs)[number];
@@ -160,7 +161,7 @@ export default async function SolutionDetailPage({ params }: { params: Params })
                   ))}
                 </ul>
                 <ButtonLink
-                  href={`/${locale}/contact`}
+                  href={`${BASE}/${locale}/contact`}
                   variant="primary"
                   className="mt-7 w-full"
                 >
@@ -184,7 +185,7 @@ export default async function SolutionDetailPage({ params }: { params: Params })
               const item = dict.solutions[sib as Slug];
               return (
                 <Reveal key={sib} delay={i * 90}>
-                  <a href={`/${locale}/solutions/${sib}`} className="group block">
+                  <a href={`${BASE}/${locale}/solutions/${sib}`} className="group block">
                     <div className="media-card-img aspect-[16/9] bg-sand">
                       <img
                         src={solutionImages[sib]}

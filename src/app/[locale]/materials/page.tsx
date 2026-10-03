@@ -35,7 +35,7 @@ export default async function MaterialsPage({ params }: { params: Params }) {
         eyebrow={m.eyebrow}
         title={m.title}
         lead={m.lead}
-        image="/images/materials/finishes.svg"
+        image={images.materialsFinishes}
         imageAlt=""
       />
 

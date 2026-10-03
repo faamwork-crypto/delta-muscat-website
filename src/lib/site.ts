@@ -29,8 +29,15 @@ export const site = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://delta-muscat-factory.vercel.app",
 
-  ogImage: "/images/og/og-default.jpg",
+  ogImage: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/og/og-default.jpg`,
 } as const;
+
+/**
+ * Base path prefix for raw <a>/<img> targets (not needed for next/link, which
+ * applies basePath automatically). Empty in normal builds; set to
+ * "/delta-muscat-website" for GitHub Pages builds (scripts/build-ghpages.mjs).
+ */
+export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const solutionSlugs = [
   "pergolas",

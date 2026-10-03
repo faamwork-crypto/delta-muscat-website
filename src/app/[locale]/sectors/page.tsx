@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CtaBanner from "@/components/home/CtaBanner";
-import { sectorImages } from "@/lib/images";
+import { images, sectorImages } from "@/lib/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { buildMetadata } from "@/lib/seo";
@@ -33,7 +33,7 @@ export default async function SectorsPage({ params }: { params: Params }) {
         eyebrow={dict.sectors.eyebrow}
         title={dict.sectors.title}
         lead={dict.sectors.lead}
-        image="/images/sectors/commercial.svg"
+        image={images.sectorsCommercial}
         imageAlt=""
       />
 
