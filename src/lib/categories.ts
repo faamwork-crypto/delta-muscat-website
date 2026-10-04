@@ -71,7 +71,7 @@ const RAW_CATEGORIES: RawCategory[] = [
       en: "Custom steel and aluminium structures for villas and private homes — designed, manufactured and installed by our own teams.",
       ar: "منشآت حديد وألمنيوم مخصصة للفلل والمنازل الخاصة — تصميمًا وتصنيعًا وتركيبًا بفرقنا الخاصة.",
     },
-    image: withBase("/images/photos/pergola-villa.webp"),
+    image: withBase("/images/categories/residential.svg"),
     subcategories: [
       {
         slug: "doors-windows",
@@ -96,7 +96,6 @@ const RAW_CATEGORIES: RawCategory[] = [
           en: "Louvred, fixed-roof and fabric pergolas for terraces, rooftops and poolside living.",
           ar: "برجولات بشرائح دوّارة وأسقف ثابتة وقماشية للشرفات والأسطح ومسابح المنازل.",
         },
-        image: withBase("/images/photos/pergola-pool.webp"),
       },
       {
         slug: "carports",
@@ -105,7 +104,6 @@ const RAW_CATEGORIES: RawCategory[] = [
           en: "Cantilever and T-type carport shades engineered for daily sun and heat.",
           ar: "مظلات سيارات كابولية وطراز T مُهندَسة لشمس وحرارة كل يوم.",
         },
-        image: withBase("/images/solutions/parking-shades.svg"),
       },
       {
         slug: "terrace-awnings",
@@ -238,7 +236,7 @@ const RAW_CATEGORIES: RawCategory[] = [
       en: "Facade systems, canopies and structures for retail, offices, hospitality and industry — built for repeatable quality and realistic timelines.",
       ar: "أنظمة واجهات ومظلات ومنشآت للمتاجر والمكاتب والضيافة والصناعة — بجودة قابلة للتكرار وجداول زمنية واقعية.",
     },
-    image: withBase("/images/photos/showroom-office.webp"),
+    image: withBase("/images/categories/commercial.svg"),
     subcategories: [
       {
         slug: "shopfronts",
@@ -483,7 +481,7 @@ const RAW_CATEGORIES: RawCategory[] = [
       en: "Public-realm shade and structures — shelters, canopies and civic metalwork engineered for safety, durability and maintainability.",
       ar: "ظل ومنشآت للحيز العام — مآوي ومظلات وعناصر مدنية مُهندَسة للأمان والدائمة والقابلة للصيانة.",
     },
-    image: withBase("/images/photos/shade-sail.webp"),
+    image: withBase("/images/categories/urban-structures.svg"),
     subcategories: [
       {
         slug: "bus-shelters",
@@ -508,7 +506,6 @@ const RAW_CATEGORIES: RawCategory[] = [
           en: "Sculptural tension sails for plazas, parks and play areas.",
           ar: "أشرعة مشدودة منحوتة الشكل للساحات والحدائق ومساحات اللعب.",
         },
-        image: withBase("/images/photos/shade-sail.webp"),
       },
       {
         slug: "park-shelters",
