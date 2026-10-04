@@ -6,8 +6,11 @@ const SLAT_COUNT = 12;
 /** Each slat starts closing this much of the progress after the one above it. */
 const STAGGER = 0.09;
 /** How far down the page (relative to viewport height) the full close happens. */
-const SCROLL_RANGE = 0.85;
-const MAX_ROTATE = 84;
+const SCROLL_RANGE = 0.8;
+/** Full close = slats flat (90deg). */
+const MAX_ROTATE = 90;
+/** Ease-out exponent: the first wheel notch already reaches ~45deg. */
+const EASE = 2.4;
 
 /** Metal face of one slat: [highlight, body, shade, edge] with its own alpha. */
 const FACE = {
@@ -57,10 +60,14 @@ export default function HeroLouvers() {
       );
       slats.forEach((slat, i) => {
         if (!slat) return;
-        const t = Math.min(
+        const raw = Math.min(
           1,
           Math.max(0, progress * (1 + (SLAT_COUNT - 1) * STAGGER) - i * STAGGER),
         );
+        // Ease-out: fast opening spin (~45deg on the first scroll notch),
+        // then the remaining rotation completes while the hero is still on
+        // screen.
+        const t = 1 - Math.pow(1 - raw, EASE);
         slat.style.transform = `rotateX(${(-MAX_ROTATE * t).toFixed(2)}deg)`;
         slat.style.backgroundImage = slatFace(t);
       });
