@@ -627,7 +627,7 @@ const en = {
       },
       {
         name: "Fabrics",
-        text: "PVC, mesh and acrylic fabric options for tension sails and shade canopies — selected for UV behaviour, shade factor and appearance.",
+        text: "PVC, mesh and acrylic fabrics for tension sails and shade canopies from established technical-textile brands — including Serge Ferrari, Mehler and Sioen — selected for UV behaviour, shade factor and appearance.",
       },
       {
         name: "Powder coating & finishes",
@@ -635,7 +635,7 @@ const en = {
       },
       {
         name: "Hardware & accessories",
-        text: "Screws, bolts, brackets, rollers, end caps, connectors and covers — the small parts that decide how a structure ages.",
+        text: "Metal door and gate fittings, screws, clamps and brackets, shade-sail hooks, rollers, end caps and covers — the small parts that decide how a structure ages.",
       },
     ],
     swatchesTitle: "Finish directions",
