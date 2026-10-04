@@ -3,6 +3,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import CtaBanner from "@/components/home/CtaBanner";
 import { images, materialImages } from "@/lib/images";
+import { fabricBrandLinks } from "@/lib/links";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { buildMetadata } from "@/lib/seo";
@@ -70,6 +71,45 @@ export default async function MaterialsPage({ params }: { params: Params }) {
             {m.note}
           </p>
         </Reveal>
+      </section>
+
+      {/* Fabric brands — links managed in src/lib/links.ts */}
+      <section className="section-pad bg-paper-deep">
+        <div className="container-site">
+          <SectionHeading
+            eyebrow={m.eyebrow}
+            title={m.brandsTitle}
+            lead={m.brandsLead}
+          />
+          <ul className="mt-10 grid gap-6 sm:grid-cols-3">
+            {fabricBrandLinks.map((brand, i) => (
+              <Reveal key={brand.id} delay={i * 90}>
+                <a
+                  href={brand.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex h-full items-center justify-between border border-line bg-paper px-7 py-6 transition-colors hover:border-bronze"
+                >
+                  <span className="font-display text-[19px] text-ink">{brand.label}</span>
+                  <svg
+                    viewBox="0 0 16 16"
+                    className="h-4 w-4 shrink-0 text-bronze transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4 12L12 4M12 4H6M12 4v6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* Swatch library */}

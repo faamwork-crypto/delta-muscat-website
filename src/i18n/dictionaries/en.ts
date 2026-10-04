@@ -672,6 +672,9 @@ const en = {
       ],
     },
     note: "Finish names above are descriptive and indicative. Available ranges and exact references are confirmed at consultation.",
+    brandsTitle: "Fabric brands",
+    brandsLead:
+      "We source technical fabrics from established international brands. The exact fabric and grade for your project are confirmed during material and sample approval.",
   },
 
   gallery: {
