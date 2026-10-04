@@ -29,8 +29,8 @@ export default function Logo({ locale, tone = "light" }: LogoProps) {
             : `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/brand/delta-muscat-logo.png`
         }
         alt=""
-        width={960}
-        height={206}
+        width={720}
+        height={155}
         className="h-9 w-auto lg:h-11"
         loading="eager"
         decoding="async"
