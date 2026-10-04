@@ -87,17 +87,27 @@ const en = {
     home: "Home",
     about: "About Us",
     solutions: "Solutions",
+    products: "Products",
     sectors: "Sectors",
     process: "Our Process",
     materials: "Materials & Finishes",
     gallery: "Project Gallery",
     contact: "Contact Us",
     solutionsOverview: "All Solutions",
+    productsOverview: "All Products",
     sectorsOverview: "All Sectors",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     skipToContent: "Skip to main content",
     inThisSection: "In this section",
+  },
+
+  categories: {
+    related: "More in this category",
+    detailNote:
+      "Every structure in this family is custom-engineered, manufactured in our Rusayl factory and installed by Delta's own crews. Talk to us about your space and we will advise on the right configuration.",
+    breadcrumbLabel: "Breadcrumb",
+    subcategoriesLabel: "Subcategories",
   },
 
   solutions: {

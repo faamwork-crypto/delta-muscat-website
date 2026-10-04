@@ -3,7 +3,8 @@ import { ArrowIcon } from "@/components/Button";
 
 type MediaCardProps = {
   href: string;
-  image: string;
+  /** Optional — when omitted a brand pattern placeholder is shown. */
+  image?: string;
   imageAlt: string;
   index?: string;
   eyebrow?: string;
@@ -39,12 +40,23 @@ export default function MediaCard({
     <Link href={href} className="group block h-full">
       <article className="flex h-full flex-col">
         <div className={`media-card-img relative ${aspect} bg-graphite-soft`}>
-          <img
-            src={image}
-            alt={imageAlt}
-            loading={priority ? "eager" : "lazy"}
-            decoding="async"
-          />
+          {image ? (
+            <img
+              src={image}
+              alt={imageAlt}
+              loading={priority ? "eager" : "lazy"}
+              decoding="async"
+            />
+          ) : (
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(115deg, transparent 0 42px, #C9A87622 42px 43px)",
+              }}
+              aria-hidden="true"
+            />
+          )}
           {chip ? (
             <span className="chip chip-concept absolute end-4 top-4">{chip}</span>
           ) : null}

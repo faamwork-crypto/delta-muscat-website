@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, Fragment } from "react";
 import Logo from "@/components/Logo";
 import { btnClass } from "@/components/Button";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { otherLocale, type Locale } from "@/i18n/config";
+import { categories, t as localized } from "@/lib/categories";
 
 type NavTarget = { label: string; path: string };
 type NavGroup = { label: string; path: string; overviewLabel: string; items: NavTarget[] };
@@ -35,6 +36,7 @@ export default function Header({
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
+  const [openMobileCategory, setOpenMobileCategory] = useState<string | null>(null);
   const lastFocused = useRef<HTMLElement | null>(null);
 
   const groups: NavGroup[] = [
@@ -108,6 +110,73 @@ export default function Header({
     [pathname, locale]
   );
 
+  /**
+   * Desktop mega-menu for the product taxonomy: one column per main
+   * category, every subcategory linked. Panel anchors to the inline-end so
+   * it opens toward the viewport centre in both LTR and RTL.
+   */
+  const productsDesktop = (
+    <li className="group relative" onMouseLeave={() => setOpenGroup(null)}>
+      <Link
+        href={localizedPath(locale, "products")}
+        className={`flex items-center gap-1.5 whitespace-nowrap py-2 text-[12px] font-semibold tracking-[0.06em] uppercase transition-opacity hover:opacity-70 ${
+          isActive("products") ? "text-bronze-soft" : ""
+        }`}
+        aria-haspopup="true"
+        onFocus={() => setOpenGroup("products")}
+        onMouseEnter={() => setOpenGroup("products")}
+      >
+        {nav.products}
+        <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" aria-hidden="true">
+          <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      </Link>
+      <div
+        className={`absolute start-0 top-full w-[min(880px,calc(100vw-2rem))] pt-3 transition-[opacity,transform] duration-300 ${
+          openGroup === "products"
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-1 opacity-0"
+        }`}
+      >
+        <div
+          className="max-h-[72vh] overflow-y-auto border border-line bg-paper text-ink shadow-[var(--shadow-pop)] focus-within:pointer-events-auto"
+          onMouseEnter={() => setOpenGroup("products")}
+        >
+          <Link
+            href={localizedPath(locale, "products")}
+            className="sticky top-0 block border-b border-line bg-paper px-6 py-3.5 text-[11px] font-semibold tracking-[0.18em] text-bronze-ink uppercase transition-colors hover:bg-paper-deep"
+          >
+            {nav.productsOverview}
+          </Link>
+          <div className="grid gap-x-8 gap-y-6 p-6 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map((category) => (
+              <div key={category.id}>
+                <Link
+                  href={localizedPath(locale, category.slug)}
+                  className="text-[12px] font-semibold tracking-[0.16em] text-bronze-ink uppercase transition-opacity hover:opacity-70"
+                >
+                  {localized(category.name, locale)}
+                </Link>
+                <ul className="mt-2 border-t border-line pt-2">
+                  {category.subcategories.map((sub) => (
+                    <li key={sub.id}>
+                      <Link
+                        href={localizedPath(locale, `${category.slug}/${sub.slug}`)}
+                        className="block py-1.5 text-[13px] font-medium leading-snug text-ink-soft transition-colors hover:text-bronze-ink"
+                      >
+                        {localized(sub.name, locale)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
@@ -136,6 +205,7 @@ export default function Header({
     setMobileOpen(false);
     setOpenGroup(null);
     setOpenMobileGroup(null);
+    setOpenMobileCategory(null);
   }, [pathname]);
 
   const solid = scrolled || mobileOpen;
@@ -157,8 +227,8 @@ export default function Header({
           <nav aria-label={locale === "ar" ? "التنقل الرئيسي" : "Primary"} className="hidden lg:block">
             <ul className="flex items-center gap-5 xl:gap-6">
               {groups.map((group) => (
+                <Fragment key={group.path}>
                 <li
-                  key={group.path}
                   className="group relative"
                   onMouseLeave={() => setOpenGroup(null)}
                 >
@@ -210,6 +280,8 @@ export default function Header({
                     </div>
                   </div>
                 </li>
+                {group.path === "solutions" ? productsDesktop : null}
+                </Fragment>
               ))}
               {links.slice(0, 3).map((link) => (
                 <li key={link.path} className="hidden xl:list-item">
@@ -287,6 +359,7 @@ export default function Header({
           <nav aria-label={locale === "ar" ? "قائمة الجوال" : "Mobile"}>
             <ul className="divide-y divide-line-light">
               {groups.map((group) => (
+                <Fragment key={group.path}>
                 <li key={group.path}>
                   <button
                     type="button"
@@ -328,6 +401,94 @@ export default function Header({
                     </ul>
                   </div>
                 </li>
+                {group.path === "solutions" ? (
+                  <li>
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between py-4 text-start text-[15px] font-semibold tracking-[0.06em] uppercase"
+                      aria-expanded={openMobileGroup === "products"}
+                      onClick={() =>
+                        setOpenMobileGroup((v) => (v === "products" ? null : "products"))
+                      }
+                    >
+                      {nav.products}
+                      <svg
+                        viewBox="0 0 12 12"
+                        className={`h-3 w-3 transition-transform duration-300 ${
+                          openMobileGroup === "products" ? "rotate-180" : ""
+                        }`}
+                        aria-hidden="true"
+                      >
+                        <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                      </svg>
+                    </button>
+                    <div
+                      className={`grid transition-[grid-template-rows] duration-300 ${
+                        openMobileGroup === "products" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <ul className="overflow-hidden">
+                        <li>
+                          <Link
+                            href={localizedPath(locale, "products")}
+                            className="block py-2.5 text-[13px] font-semibold tracking-[0.14em] text-bronze-soft uppercase"
+                          >
+                            {nav.productsOverview}
+                          </Link>
+                        </li>
+                        {categories.map((category) => (
+                          <li key={category.id}>
+                            <button
+                              type="button"
+                              className="flex w-full items-center justify-between py-2.5 ps-3 text-start text-[14px] font-semibold text-bronze-soft"
+                              aria-expanded={openMobileCategory === category.id}
+                              onClick={() =>
+                                setOpenMobileCategory((v) =>
+                                  v === category.id ? null : category.id,
+                                )
+                              }
+                            >
+                              {localized(category.name, locale)}
+                              <svg
+                                viewBox="0 0 12 12"
+                                className={`h-2.5 w-2.5 shrink-0 transition-transform duration-300 ${
+                                  openMobileCategory === category.id ? "rotate-180" : ""
+                                }`}
+                                aria-hidden="true"
+                              >
+                                <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                              </svg>
+                            </button>
+                            <div
+                              className={`grid transition-[grid-template-rows] duration-300 ${
+                                openMobileCategory === category.id
+                                  ? "grid-rows-[1fr]"
+                                  : "grid-rows-[0fr]"
+                              }`}
+                            >
+                              <ul className="overflow-hidden ps-5">
+                                {category.subcategories.map((sub) => (
+                                  <li key={sub.id}>
+                                    <Link
+                                      href={localizedPath(
+                                        locale,
+                                        `${category.slug}/${sub.slug}`,
+                                      )}
+                                      className="block py-2.5 text-[14px] text-steel-light"
+                                    >
+                                      {localized(sub.name, locale)}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                ) : null}
+                </Fragment>
               ))}
               {[...links, { label: nav.home, path: "" }].reverse().map((link) => (
                 <li key={link.path || "home"}>

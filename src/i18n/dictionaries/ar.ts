@@ -88,17 +88,27 @@ const ar: Dictionary = {
     home: "الرئيسية",
     about: "من نحن",
     solutions: "حلولنا",
+    products: "المنتجات",
     sectors: "القطاعات",
     process: "منهجية العمل",
     materials: "المواد والتشطيبات",
     gallery: "معرض المشاريع",
     contact: "اتصل بنا",
     solutionsOverview: "جميع الحلول",
+    productsOverview: "جميع المنتجات",
     sectorsOverview: "جميع القطاعات",
     openMenu: "فتح القائمة",
     closeMenu: "إغلاق القائمة",
     skipToContent: "تجاوز إلى المحتوى الرئيسي",
     inThisSection: "في هذا القسم",
+  },
+
+  categories: {
+    related: "المزيد في هذا القسم",
+    detailNote:
+      "كل منشأ في هذه العائلة يُهندَس حسب الطلب، ويُصنّع في مصنعنا في الرسيل، ويُركّب بفرق دلتا الخاصة. تحدث إلينا عن مساحتك وسنرشدك إلى التكوين الأنسب.",
+    breadcrumbLabel: "مسار التنقل",
+    subcategoriesLabel: "الفئات الفرعية",
   },
 
   solutions: {

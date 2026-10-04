@@ -30,7 +30,7 @@ export const site = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://delta-muscat-factory.vercel.app",
 
-  ogImage: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/og/og-default.jpg`,
+  ogImage: "/images/og/og-default.jpg",
 } as const;
 
 /**
