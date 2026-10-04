@@ -4,13 +4,14 @@ import { useEffect, useRef } from "react";
 
 const SLAT_COUNT = 12;
 /** Each slat starts closing this much of the progress after the one above it. */
-const STAGGER = 0.09;
+const STAGGER = 0.14;
 /** How far down the page (relative to viewport height) the full close happens. */
-const SCROLL_RANGE = 0.8;
-/** Full close = slats flat (90deg). */
-const MAX_ROTATE = 90;
-/** Ease-out exponent: the first wheel notch already reaches ~45deg. */
-const EASE = 2.4;
+const SCROLL_RANGE = 0.55;
+/**
+ * Slat base angle goes past flat (90deg) so the blades visibly flip over —
+ * the backface shows through and the motion reads much stronger.
+ */
+const MAX_ROTATE = 115;
 
 /** Metal face of one slat: [highlight, body, shade, edge] with its own alpha. */
 const FACE = {
@@ -64,12 +65,14 @@ export default function HeroLouvers() {
           1,
           Math.max(0, progress * (1 + (SLAT_COUNT - 1) * STAGGER) - i * STAGGER),
         );
-        // Ease-out: fast opening spin (~45deg on the first scroll notch),
-        // then the remaining rotation completes while the hero is still on
-        // screen.
-        const t = 1 - Math.pow(1 - raw, EASE);
+        // Ease-out with a slight overshoot-and-settle (easeOutBack): the
+        // blades whip past flat and ease back, so the spin reads as a real
+        // mechanical shutter instead of a fade.
+        const k = 1.70158;
+        const s = raw - 1;
+        const t = 1 + (k + 1) * s * s * s + k * s * s;
         slat.style.transform = `rotateX(${(-MAX_ROTATE * t).toFixed(2)}deg)`;
-        slat.style.backgroundImage = slatFace(t);
+        slat.style.backgroundImage = slatFace(Math.min(1, t));
       });
     };
 
@@ -102,7 +105,7 @@ export default function HeroLouvers() {
             borderBottom: "1px solid rgba(201,168,118,0.22)",
             boxShadow:
               "inset 0 1px 0 rgba(255,255,255,0.05), inset 0 12px 18px -14px rgba(0,0,0,0.55)",
-            backfaceVisibility: "hidden",
+            backfaceVisibility: "visible",
           }}
         />
       ))}
