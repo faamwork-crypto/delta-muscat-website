@@ -38,11 +38,10 @@ export default async function LocaleLayout({
     alternateName: "Delta Muscat",
     description: dict.meta.home.description,
     email: site.email,
-    telephone: site.headOfficePhone,
-    faxNumber: site.fax,
+    telephone: [site.headOfficePhone, site.headOfficePhone2, site.factoryPhone],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Road 11, Rusayl Industrial City",
+      streetAddress: "Road 11, Rusayl Industries",
       addressLocality: "Muscat",
       addressCountry: "OM",
       postOfficeBoxNumber: "134",

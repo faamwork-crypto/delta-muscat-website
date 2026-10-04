@@ -14,14 +14,15 @@ export const site = {
 
   headOfficePhone: "+968 24499947",
   headOfficePhoneHref: "tel:+96824499947",
+  headOfficePhone2: "+968 24499935",
+  headOfficePhone2Href: "tel:+96824499935",
   factoryPhone: "+968 24449992",
   factoryPhoneHref: "tel:+96824449992",
-  fax: "+968 24499935",
 
-  email: "deltamuscat@omantel.net.om",
-  emailHref: "mailto:deltamuscat@omantel.net.om",
+  email: "info@deltamuscat.com",
+  emailHref: "mailto:info@deltamuscat.com",
 
-  factoryAddress: "Road 11, Rusayl Industrial City, Muscat, Sultanate of Oman",
+  factoryAddress: "Road 11, Rusayl Industries, Sultanate of Oman",
   mailingAddress:
     "P.O. Box 134, P.C. 134, Jawharat Al Shatti, Muscat, Sultanate of Oman",
 

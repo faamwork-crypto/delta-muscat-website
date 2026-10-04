@@ -27,7 +27,7 @@ html[lang="ar"] {
 /* ------------------------------------------------------------------ */
 /* Delta Muscat — design tokens                                        */
 /* Palette inspired by architectural materials: warm off-white paper,  */
-/* charcoal ink, dark graphite, muted bronze, sand.                    */
+/* charcoal ink, deep green graphite, muted bronze, sand.              */
 /* ------------------------------------------------------------------ */
 @theme {
   --color-paper: #f7f4ee;
@@ -36,9 +36,9 @@ html[lang="ar"] {
   --color-sand-deep: #d9cdb6;
   --color-ink: #1c1b18;
   --color-ink-soft: #4f4d46;
-  --color-graphite: #232220;
-  --color-graphite-deep: #191917;
-  --color-graphite-soft: #2c2a25;
+  --color-graphite: #123C2E;
+  --color-graphite-deep: #0C2A20;
+  --color-graphite-soft: #1B4A3A;
   --color-bronze: #a87c4f;
   --color-bronze-deep: #8f663f;
   --color-bronze-ink: #7e5a35; /* AA-safe bronze for small text on paper */

@@ -1,4 +1,5 @@
 import ButtonLink, { ArrowIcon } from "@/components/Button";
+import HeroLouvers from "@/components/HeroLouvers";
 import { images } from "@/lib/images";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { Locale } from "@/i18n/config";
@@ -19,6 +20,9 @@ export default function Hero({ locale, dict }: { locale: Locale; dict: Dictionar
         className="absolute inset-0 bg-gradient-to-b from-graphite-deep/30 via-graphite-deep/10 to-graphite-deep/85"
         aria-hidden="true"
       />
+
+      {/* Metal louvers over the image — close progressively as the page scrolls */}
+      <HeroLouvers />
 
       <div className="container-site relative pt-44 sm:pt-52">
         <p className="anim-hero eyebrow text-bronze-soft" style={{ animationDelay: "150ms" }}>

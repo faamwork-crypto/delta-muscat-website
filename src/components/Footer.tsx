@@ -69,9 +69,17 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
           </h2>
           <address className="mt-5 space-y-3 text-[14px] not-italic text-steel-light">
             <p>
-              <a href={site.headOfficePhoneHref} className="transition-colors hover:text-paper">
-                {dict.contact.info.headOffice}: {site.headOfficePhone}
-              </a>
+              <span className="block">
+                {dict.contact.info.headOffice}:
+              </span>
+              <span className="flex flex-wrap gap-x-5 gap-y-1">
+                <a href={site.headOfficePhoneHref} dir="ltr" className="transition-colors hover:text-paper">
+                  {site.headOfficePhone}
+                </a>
+                <a href={site.headOfficePhone2Href} dir="ltr" className="transition-colors hover:text-paper">
+                  {site.headOfficePhone2}
+                </a>
+              </span>
             </p>
             <p>
               <a href={site.factoryPhoneHref} className="transition-colors hover:text-paper">

@@ -52,13 +52,20 @@ export default async function ContactPage({ params }: { params: Params }) {
                   <dt className="text-[11px] font-semibold tracking-[0.16em] text-steel uppercase">
                     {info.headOffice}
                   </dt>
-                  <dd className="mt-1">
+                  <dd className="mt-1 flex flex-col gap-1">
                     <a
                       href={site.headOfficePhoneHref}
                       dir="ltr"
                       className="font-medium text-ink transition-colors hover:text-bronze-ink"
                     >
                       {site.headOfficePhone}
+                    </a>
+                    <a
+                      href={site.headOfficePhone2Href}
+                      dir="ltr"
+                      className="font-medium text-ink transition-colors hover:text-bronze-ink"
+                    >
+                      {site.headOfficePhone2}
                     </a>
                   </dd>
                 </div>
