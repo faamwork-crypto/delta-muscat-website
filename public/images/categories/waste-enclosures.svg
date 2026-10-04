@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+  </filter>
+  <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+    <path d="M80 0 H0 V80" fill="none" stroke="#E5DCCB" stroke-width="1.5" opacity="0.55"/>
+  </pattern>
+</defs>
+<rect width="1600" height="1000" fill="#F7F4EE"/>
+<rect width="1600" height="1000" fill="url(#grid)" opacity="0.5"/>
+<rect x="96" y="76" width="1408" height="848" fill="#FBFAF6"/>
+<rect x="96" y="76" width="1408" height="848" fill="none" stroke="#D9CDB6" stroke-width="3"/>
+<rect x="120" y="100" width="1360" height="800" fill="none" stroke="#123C2E" stroke-width="3" opacity="0.35"/>
+<g opacity="0.5" transform="translate(0,20)" stroke="#123C2E" stroke-width="2.5" fill="none">
+  <path d="M120 900 L1480 120" opacity="0.18"/>
+  <path d="M120 940 L1480 160" opacity="0.12"/>
+</g>
+<g transform="translate(0,10)"><line x1="800" y1="200" x2="800" y2="700" stroke="#123C2E" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="440" y="220" width="350" height="440" rx="6" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="480" y1="240" x2="480" y2="640" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/><line x1="570" y1="240" x2="570" y2="640" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/><line x1="660" y1="240" x2="660" y2="640" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/><line x1="750" y1="240" x2="750" y2="640" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+    <rect x="810" y="220" width="350" height="440" rx="6" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="850" y1="240" x2="850" y2="640" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/><line x1="940" y1="240" x2="940" y2="640" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/><line x1="1030" y1="240" x2="1030" y2="640" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/><line x1="1120" y1="240" x2="1120" y2="640" stroke="#A87C4F" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+    <circle cx="770" cy="430" r="12" fill="#A87C4F"/><circle cx="830" cy="430" r="12" fill="#A87C4F"/></g>
+<rect x="96" y="76" width="1408" height="848" filter="url(#grain)" opacity="0.05"/>
+<rect x="96" y="880" width="1408" height="8" fill="#123C2E" opacity="0.85"/>
+</svg>

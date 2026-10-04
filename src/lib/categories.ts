@@ -739,6 +739,9 @@ function buildCategories(): Category[] {
       categoryId: cat.id,
       order: si + 1,
       active: true,
+      // Default to the generated brand illustration; real photography
+      // overrides by setting `image` in the raw data above.
+      image: sub.image ?? withBase(`/images/categories/${sub.slug}.svg`),
     })),
   }));
 }
