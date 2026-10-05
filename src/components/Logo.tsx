@@ -31,7 +31,7 @@ export default function Logo({ locale, tone = "light" }: LogoProps) {
         alt=""
         width={685}
         height={147}
-        className="h-9 w-auto lg:h-11"
+        className="h-9 w-auto max-w-none lg:h-11"
         loading="eager"
         decoding="async"
       />
