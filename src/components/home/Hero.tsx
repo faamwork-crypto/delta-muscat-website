@@ -1,5 +1,5 @@
 import ButtonLink, { ArrowIcon } from "@/components/Button";
-import HeroLouvers from "@/components/HeroLouvers";
+import HeroSlideshow from "@/components/home/HeroSlideshow";
 import { images } from "@/lib/images";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { Locale } from "@/i18n/config";
@@ -8,21 +8,7 @@ export default function Hero({ locale, dict }: { locale: Locale; dict: Dictionar
   const h = dict.home.hero;
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-graphite-deep text-paper">
-      <img
-        src={images.hero}
-        alt=""
-        aria-hidden="true"
-        fetchPriority="high"
-        decoding="async"
-        className="anim-hero-fade absolute inset-0 h-full w-full object-cover"
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-graphite-deep/30 via-graphite-deep/10 to-graphite-deep/85"
-        aria-hidden="true"
-      />
-
-      {/* Metal louvers over the image — close progressively as the page scrolls */}
-      <HeroLouvers />
+      <HeroSlideshow />
 
       <div className="container-site relative pt-44 sm:pt-52">
         <p className="anim-hero eyebrow text-bronze-soft" style={{ animationDelay: "150ms" }}>

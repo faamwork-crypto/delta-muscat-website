@@ -267,6 +267,23 @@ html[lang="ar"] {
     animation: soft-in 1.6s ease-out forwards;
   }
 
+  /* Hero slideshow — one slow breath in and out over each full slide cycle,
+     running identically on every layer so the visible photo always drifts. */
+  @keyframes hero-slide-zoom {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+  }
+
+  .hero-slide-zoom {
+    animation: hero-slide-zoom 27.6s ease-in-out infinite;
+    will-change: transform;
+  }
+
   /* Accessibility -------------------------------------------------------- */
   .skip-link {
     @apply fixed start-4 top-4 z-[100] -translate-y-24 bg-ink px-4 py-2.5 text-sm font-medium text-paper transition-transform;
@@ -283,7 +300,8 @@ html[lang="ar"] {
 
     .reveal,
     .anim-hero,
-    .anim-hero-fade {
+    .anim-hero-fade,
+    .hero-slide-zoom {
       opacity: 1 !important;
       transform: none !important;
       animation: none !important;
