@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import MediaCard from "@/components/MediaCard";
+import { BASE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
 type GalleryItem = Dictionary["gallery"]["items"][number];
@@ -50,7 +51,7 @@ export default function GalleryGrid({
           <MediaCard
             key={item.id}
             href="#"
-            image={item.image}
+            image={`${BASE}${item.image}`}
             imageAlt={`${item.title} — ${item.concept}`}
             eyebrow={item.concept}
             title={item.title}

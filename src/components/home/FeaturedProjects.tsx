@@ -43,7 +43,7 @@ export default function FeaturedProjects({ locale, dict }: { locale: Locale; dic
                     i === 0 ? "aspect-[21/9]" : "aspect-[4/3]"
                   }`}
                 >
-                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                  <img src={`${BASE}${item.image}`} alt={item.title} loading="lazy" decoding="async" />
                   <span className="chip chip-concept absolute end-4 top-4">{item.concept}</span>
                   <span className="absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-bronze transition-transform duration-500 group-hover:scale-x-100 rtl:origin-right" />
                 </figure>

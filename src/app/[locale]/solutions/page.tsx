@@ -79,7 +79,7 @@ export default async function SolutionsPage({
               <Reveal key={item.id} delay={i * 80}>
                 <a href={`${BASE}/${locale}/gallery`} className="group block">
                   <figure className="media-card-img relative aspect-[4/3] bg-sand">
-                    <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                    <img src={`${BASE}${item.image}`} alt={item.title} loading="lazy" decoding="async" />
                     <span className="chip chip-concept absolute end-3 top-3">{item.concept}</span>
                   </figure>
                   <p className="mt-3 text-[11px] font-semibold tracking-[0.2em] text-bronze-ink uppercase">
