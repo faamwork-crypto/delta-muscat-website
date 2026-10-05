@@ -285,7 +285,7 @@ const en = {
   home: {
     hero: {
       eyebrow: "Rusayl Industrial City · Muscat · Sultanate of Oman",
-      title: "The architecture of shade.",
+      title: "The architecture of Metal Solution.",
       lead: "Delta Muscat Steel & Aluminium designs, manufactures and installs custom pergolas, parking shades, shade structures and architectural metalwork — all under one roof, here in Oman.",
       ctaPrimary: "Explore Our Solutions",
       ctaSecondary: "Request a Consultation",
@@ -755,7 +755,7 @@ const en = {
   },
 
   footer: {
-    tagline: "The architecture of shade — designed, manufactured and installed in Oman.",
+    tagline: "The architecture of metal solution — designed, manufactured and installed in Oman.",
     companyTitle: "Company",
     solutionsTitle: "Solutions",
     sectorsTitle: "Sectors",
