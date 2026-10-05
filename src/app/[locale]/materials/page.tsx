@@ -88,23 +88,35 @@ export default async function MaterialsPage({ params }: { params: Params }) {
                   href={brand.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-full items-center justify-between border border-line bg-paper px-7 py-6 transition-colors hover:border-bronze"
+                  className="group flex h-full flex-col border border-line bg-paper transition-colors hover:border-bronze"
                 >
-                  <span className="font-display text-[19px] text-ink">{brand.label}</span>
-                  <svg
-                    viewBox="0 0 16 16"
-                    className="h-4 w-4 shrink-0 text-bronze transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M4 12L12 4M12 4H6M12 4v6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  {brand.image ? (
+                    <span className="media-card-img relative aspect-[16/10] block bg-sand">
+                      <img
+                        src={brand.image}
+                        alt={`${brand.label} fabric sample`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                  ) : null}
+                  <span className="flex flex-1 items-center justify-between px-7 py-5">
+                    <span className="font-display text-[19px] text-ink">{brand.label}</span>
+                    <svg
+                      viewBox="0 0 16 16"
+                      className="h-4 w-4 shrink-0 text-bronze transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 12L12 4M12 4H6M12 4v6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
                 </a>
               </Reveal>
             ))}
