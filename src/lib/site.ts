@@ -19,6 +19,9 @@ export const site = {
   factoryPhone: "+968 24449992",
   factoryPhoneHref: "tel:+96824449992",
 
+  /** WhatsApp chat line (user-provided, Oct 2026). Digits only for wa.me links. */
+  whatsappNumber: "96876987783",
+
   email: "info@deltamuscat.com",
   emailHref: "mailto:info@deltamuscat.com",
 

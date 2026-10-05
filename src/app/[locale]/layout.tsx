@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { dir, isLocale, locales, type Locale } from "@/i18n/config";
@@ -59,6 +60,7 @@ export default async function LocaleLayout({
         <Header locale={locale} nav={dict.nav} common={dict.common} />
         <main id="main-content">{children}</main>
         <Footer locale={locale} dict={dict} />
+        <WhatsAppButton locale={locale} />
         <JsonLd data={organization} />
       </body>
     </html>
