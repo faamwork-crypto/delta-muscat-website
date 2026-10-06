@@ -12,7 +12,7 @@
  *   NEXT_PUBLIC_SITE_URL="https://deltamuscat.com" npm run build:host
  */
 import { spawnSync } from "node:child_process";
-import { copyFileSync, mkdirSync, existsSync, readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { copyFileSync, mkdirSync, existsSync, readFileSync, writeFileSync, readdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 
 const env = {
@@ -49,23 +49,17 @@ writeFileSync(
 `,
 );
 
-/* Zip for cPanel upload (uses PowerShell Compress-Archive; .htaccess included). */
+/* Package for upload: tar.gz (DirectAdmin extracts it correctly; the
+   PowerShell zip variant writes backslash entry names that break on Linux). */
 mkdirSync(dist, { recursive: true });
-const zipPath = join(dist, "delta-muscat-hosting.zip");
-const ps = spawnSync(
-  "powershell",
-  [
-    "-NoProfile",
-    "-Command",
-    `$ErrorActionPreference='Stop'; ` +
-      `if (Test-Path '${zipPath}') { Remove-Item '${zipPath}' }; ` +
-      `Copy-Item '${join(out, ".htaccess")}' '${join(out, "htaccess.txt")}' -Force; ` +
-      `Compress-Archive -Path '${out}\\*' -DestinationPath '${zipPath}' -Force; ` +
-      `Move-Item '${join(out, "htaccess.txt")}' '${join(out, ".htaccess")}' -Force; ` +
-      `Write-Host 'zip ok'`,
-  ],
-  { stdio: "inherit", shell: false },
+const tgzPath = join(dist, "delta-muscat-hosting.tar.gz");
+if (existsSync(tgzPath)) rmSync(tgzPath);
+const tar = spawnSync(
+  "tar",
+  ["--force-local", "-czf", tgzPath, "-C", out, "."],
+  { stdio: "inherit", shell: true },
 );
+if (tar.status !== 0) process.exit(tar.status ?? 1);
 if (ps.status !== 0) process.exit(ps.status ?? 1);
 
 console.log(`Host export ready in ./out — upload zip: ${zipPath}`);
