@@ -729,8 +729,11 @@ const en = {
       required: "Required",
       noteTitle: "How this form works",
       noteText:
-        "Submitting opens your email application with the request pre-filled to our team — nothing is stored on this website. You can also call or email us directly using the details on this page.",
+        "Submitting sends your request directly to our team at info@deltamuscat.com — we reply as fast as we can. You can also call or email us directly using the details on this page.",
       validation: "Please add your name and phone number so we can reach you.",
+      serverSuccessTitle: "Request sent",
+      serverSuccessText:
+        "Thank you — your request has reached our team at info@deltamuscat.com and we will get back to you shortly. For anything urgent, please call us.",
       successTitle: "Your email is ready",
       successText: "Your email application should have opened with the request pre-filled. If it did not, please call us or write to {email} directly.",
     },

@@ -5,9 +5,10 @@ import { btnClass } from "@/components/Button";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
 /**
- * Consultation request form. There is no backend in this first release, so —
- * exactly like the company's current site — submitting opens the visitor's
- * email application with the request pre-filled to the official address.
+ * Consultation request form. On the production host it POSTs to
+ * /contact.php, which emails the request to the company's info@ mailbox.
+ * If the endpoint is unavailable (e.g. preview builds), it falls back to
+ * opening the visitor's email application with the request pre-filled.
  */
 export default function ContactForm({
   dict,
@@ -16,7 +17,7 @@ export default function ContactForm({
   dict: Dictionary["contact"]["form"];
   email: string;
 }) {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sent-server" | "sent-mailto">("idle");
   const [error, setError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -24,9 +25,10 @@ export default function ContactForm({
     "w-full rounded-[2px] border border-line bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-steel/70 transition-colors focus:border-bronze focus:outline-none";
   const label = "mb-2 block text-[11px] font-semibold tracking-[0.18em] text-ink-soft uppercase";
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     const name = String(data.get("name") ?? "").trim();
     const phone = String(data.get("phone") ?? "").trim();
 
@@ -59,7 +61,26 @@ export default function ContactForm({
       subject
     )}&body=${encodeURIComponent(lines.join("\n"))}`;
 
-    setStatus("sent");
+    // Try the server-side endpoint first (production host); it emails the
+    // request to info@ directly. Anything else falls back to the mailto flow.
+    try {
+      data.set("website", ""); // honeypot expected empty by contact.php
+      const r = await fetch("contact.php", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      const json = await r.json().catch(() => null);
+      if (r.ok && json?.ok) {
+        setStatus("sent-server");
+        form.reset();
+        return;
+      }
+    } catch {
+      // endpoint unreachable — fall back below
+    }
+
+    setStatus("sent-mailto");
     window.location.href = mailto;
   }
 
@@ -167,7 +188,17 @@ export default function ContactForm({
         </p>
       ) : null}
 
-      {status === "sent" ? (
+      {status === "sent-server" ? (
+        <p
+          role="status"
+          className="border-s-2 border-bronze bg-paper-deep px-4 py-3 text-[14px] leading-relaxed text-ink-soft"
+        >
+          <strong className="font-semibold text-ink">{dict.serverSuccessTitle}. </strong>
+          {dict.serverSuccessText}
+        </p>
+      ) : null}
+
+      {status === "sent-mailto" ? (
         <p
           role="status"
           className="border-s-2 border-bronze bg-paper-deep px-4 py-3 text-[14px] leading-relaxed text-ink-soft"
